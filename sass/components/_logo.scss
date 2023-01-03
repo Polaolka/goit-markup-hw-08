@@ -1,0 +1,17 @@
+.logo {
+    display: flex;
+	margin-right: 93px;
+    text-decoration: none;
+	font-family: "Raleway", sans-serif;
+
+    @include fonts($fw: 700, $fs: 24px, $lh: 1.167, $color: #000000);
+
+    &--accent {
+        color: var(--acsent-color);
+    }
+    &--dark-them {
+        margin: 0 auto;
+        color: var(--white-color);
+        justify-content: center;
+    }
+}

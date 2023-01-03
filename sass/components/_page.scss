@@ -1,0 +1,9 @@
+.page {
+	font-family: var(--main-font);
+	font-style: normal;
+	
+	@include fonts;
+
+	background-color: var(--white-color);
+	// position: relative;
+}

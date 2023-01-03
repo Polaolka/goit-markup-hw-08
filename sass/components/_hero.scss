@@ -1,0 +1,20 @@
+.hero {
+    @include section(118px, 118px);
+
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: var(--dark-bg-color);
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/hero_mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero__title {
+    margin-bottom: 30px;
+
+    @include fonts($fw: 900, $fs: 26px, $lh: 1.62, $lsp: 0.06em, $color: var(--white-color));
+
+    text-transform: uppercase;
+}
