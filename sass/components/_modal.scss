@@ -165,13 +165,16 @@
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 
-    @include fonts($fs: 12px, $lh: 1.17, $lsp: 0.01em, $color: rgba(117, 117, 117, 0.5));
+    @include fonts;
 
     transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:focus {
         outline-offset: -1px;
         outline: 1px solid var(--acsent-color);
+    }
+    &::placeholder {
+        @include fonts($color: rgba(117, 117, 117, 0.5))
     }
 }
 
