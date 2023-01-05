@@ -1,239 +1,235 @@
 .backdrop {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 10;
-    transform: translatex(0) scale(1);
-    opacity: 1;
-    pointer-events: visible;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	transform: translatex(0) scale(1);
+	opacity: 1;
+	pointer-events: visible;
 
-    padding: 15px 15px;
+	padding: 15px 15px;
 
-    background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
+		visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transform: translatex(-100%) scale(0);
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transform: translatex(-100%) scale(0);
 }
 
 .modal {
+	position: absolute;
+	padding: 40px;
+	width: 100%;
+	height: 609px;
+	background: var(--white-color);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	opacity: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	pointer-events: visible;
 
-    position: absolute;
-    padding: 40px;
-    width: 100%;
-    height: 609px;
-    background: var(--white-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    opacity: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    pointer-events: visible;
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
+		visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    .backdrop.is-hidden & {
-        opacity: 0;
-        transform: scale(2);
-        pointer-events: none;
-        visibility: hidden;
-    }
-    @media (min-width: 480px) {
-        width: 450px;
-        height: 609px;
-    }
-    @media (min-width: 1200px) {
-        width: 528px;
-        min-height: 581px;
-    }
+	.backdrop.is-hidden & {
+		opacity: 0;
+		transform: scale(2);
+		pointer-events: none;
+		visibility: hidden;
+	}
+	@media (min-width: 480px) {
+		width: 450px;
+		height: 609px;
+	}
+	@media (min-width: 1200px) {
+		width: 528px;
+		min-height: 581px;
+	}
 }
 
 .modal__close {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    background-color: var(--white-color);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 8px;
+	right: 8px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	background-color: var(--white-color);
 
-    &::before, 
-    &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 14px;
-        height: 2px;
-        background-color: rgb(0, 0, 0);
-        border-radius: 1px;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 14px;
+		height: 2px;
+		background-color: rgb(0, 0, 0);
+		border-radius: 1px;
 
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
+		transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
 
-    &::before {
-        transform: rotate(45deg);
-    }
-    
-    &::after {
-        transform: rotate(-45deg);
-    }
-    &:hover::before, 
-    &:focus::before {
-        background-color: var(--acsent-color);
-        transform: rotate(calc(405deg));
-    }
+	&::before {
+		transform: rotate(45deg);
+	}
 
-    &:hover::after, 
-    &:focus::after {
-        background-color: var(--acsent-color);
-        transform: rotate(calc(315deg));
-    }
+	&::after {
+		transform: rotate(-45deg);
+	}
+	&:hover::before,
+	&:focus::before {
+		background-color: var(--acsent-color);
+		transform: rotate(calc(405deg));
+	}
+
+	&:hover::after,
+	&:focus::after {
+		background-color: var(--acsent-color);
+		transform: rotate(calc(315deg));
+	}
 }
 
 .modal__form {
-    display: flex;
-    flex-direction: column;
-    @include fonts($fs: 12px, $lh: 1.167, $lsp: 0.01em);
+	display: flex;
+	flex-direction: column;
+	@include fonts($fs: 12px, $lh: 1.167, $lsp: 0.01em);
 }
 
 .modal__title {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 
-    @include fonts($fw: 700, $fs: 20px, $lh: 1.5, $color: var(--title-text-color));
+	@include fonts($fw: 700, $fs: 20px, $lh: 1.5, $color: var(--title-text-color));
 
-    text-align: center;
+	text-align: center;
 }
 
 .modal__label {
-    position: relative;
-    @include fonts($fs: 12px, $lh: 1.17, $lsp: 0.01em);
-    // margin-bottom: 10px;
-    
-    // &:not(:first-child) {
-    //     margin-top: 10px;
-    // }
+	position: relative;
+	@include fonts($fs: 12px, $lh: 1.17, $lsp: 0.01em);
+	// margin-bottom: 10px;
+
+	// &:not(:first-child) {
+	//     margin-top: 10px;
+	// }
 }
 
 .modal__input {
-    padding: 12px 42px;
-    width: 100%;
-    height: 40px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
+	padding: 12px 42px;
+	width: 100%;
+	height: 40px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
 
-    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:focus {
-        outline-offset: -1px;
-        outline: 1px solid var(--acsent-color);
-    }
-    @media (min-width: 1200px) {
-        margin-bottom: 3px;
-    }
+	&:focus {
+		outline-offset: -1px;
+		outline: 1px solid var(--acsent-color);
+	}
+	@media (min-width: 1200px) {
+		margin-bottom: 3px;
+	}
 }
 
 .modal__icon {
-    position: absolute;
-    top: 29px;
-    left: 12px;
-    fill: currentColor;
+	position: absolute;
+	top: 29px;
+	left: 12px;
+	fill: currentColor;
 }
 
 .modal__comment {
-    resize: none;
+	resize: none;
 
-    padding: 12px 16px;
-    width: 100%;
-    height: 120px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
+	padding: 12px 16px;
+	width: 100%;
+	height: 120px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
 
-    @include fonts;
+	@include fonts;
 
-    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:focus {
-        outline-offset: -1px;
-        outline: 1px solid var(--acsent-color);
-    }
-    &::placeholder {
-        @include fonts($color: rgba(117, 117, 117, 0.5))
-    }
+	&:focus {
+		outline-offset: -1px;
+		outline: 1px solid var(--acsent-color);
+	}
+	&::placeholder {
+		@include fonts($color: rgba(117, 117, 117, 0.5));
+	}
 }
 
 .modal__icon-wrap {
-    color: var(--title-text-color);
+	color: var(--title-text-color);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    .modal__label:focus-within  & {
-        color: var(--acsent-color);
-    }
+	.modal__label:focus-within & {
+		color: var(--acsent-color);
+	}
 }
 
 .checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px auto 30px;
 
-    @include fonts($fs: 12px, $lh: 1.167);
+	@include fonts($fs: 12px, $lh: 1.167);
 
-    @media (min-width: 1200px) {
-        @include fonts($fs: 14px, $lh: 1.71);
-    }
+	@media (min-width: 1200px) {
+		@include fonts($fs: 14px, $lh: 1.71);
+	}
 }
 
 .checkbox__link {
-    margin-left: 4px;
-    color: var(--acsent-color);
+	margin-left: 4px;
+	color: var(--acsent-color);
 }
 
 .checkbox__input {
-    display: inline-block;
-        
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+	display: inline-block;
+
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
 }
 
 .checkbox__icon {
-    margin-right: 9px;
-    display: block;
-    width: 16;
-    height: 16px;
-    border: 2px solid var(--title-text-color);
-    border-radius: 2px;
-    fill: transparent;
+	margin-right: 9px;
+	display: block;
+	width: 16;
+	height: 16px;
+	border: 2px solid var(--title-text-color);
+	border-radius: 2px;
+	fill: transparent;
 
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+		border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox__input:checked ~ .checkbox__icon {
-    fill: var(--white-color);
-    background-color: var(--acsent-color);
-    border: 2px solid var(--acsent-color);
-
+	fill: var(--white-color);
+	background-color: var(--acsent-color);
+	border: 2px solid var(--acsent-color);
 }
-
