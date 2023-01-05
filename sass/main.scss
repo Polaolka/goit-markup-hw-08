@@ -2,13 +2,12 @@
 @import './utils/variables';
 @import './utils/reset';
 @import './utils/mixins';
+@import './utils/placeholder';
 @import './vendors/v-hidden';
 // Component styles
 @import './components/base';
 @import './components/page';
 @import './components/container';
-@import './components/section';
-@import './components/card-set';
 @import './components/button';
 @import './components/logo';
 @import './components/mobile-menu';

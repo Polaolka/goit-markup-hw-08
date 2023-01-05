@@ -3,26 +3,42 @@
     @include section(60px, 60px);
 
     background-color: var(--white-color);
-}
 
-// .features__list {
-//     display: flex;
-//     align-items: flex-start;
-// }
-
-.features__li-item {
-    &:not(:last-child) {
-        margin-bottom: 30px;
+    @media (min-width: 1200px) {
+        @include section(94px, 94px);
     }
 }
 
+.features__list {
 
-//     // width: calc((100% - 90px)/4);
-//     // margin-right: 30px;
-//     // &:last-child {
-//     //     margin-right: 0;
-//     // }
-// }
+    @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+.features__card {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }    
+    }
+    @media (min-width: 768px) {
+        --items: 2;
+        --indent: 30px;
+        flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
+    }
+    @media (min-width: 1200px) {
+        --items: 4;
+        --indent: 30px;
+        flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
+    }
+
+    
+}
 
 .features__item {
     display: flex;
@@ -33,6 +49,7 @@
     margin-bottom: 30px;
     background: var(--light-bg-color);
     border-radius: 4px;
+
 }
 
 .features__icon {
@@ -46,6 +63,11 @@
 
     @include fonts($fw: 700, $lh: 1.14, $color: var(--title-text-color));
     text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        text-align: left;
+    }
+
 }
 
 .features__txt {

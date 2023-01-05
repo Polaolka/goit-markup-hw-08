@@ -9,6 +9,18 @@
         url('../images/hero_mobile.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    @media (min-width: 768px) {
+		max-width: 768px;
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/hero_tablet.jpg');
+	}
+    @media (min-width: 1200px) {
+		max-width: 1600px;
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/hero_bg.jpg');
+        @include section(200px, 200px);
+	}
+
 }
 
 .hero__title {
@@ -17,4 +29,8 @@
     @include fonts($fw: 900, $fs: 26px, $lh: 1.62, $lsp: 0.06em, $color: var(--white-color));
 
     text-transform: uppercase;
+
+    @media (min-width: 1200px) {
+        @include fonts($fw: 900, $fs: 44px, $lh: 1.36, $lsp: 0.06em, $color: var(--white-color));
+	}
 }

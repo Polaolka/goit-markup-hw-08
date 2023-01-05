@@ -1,5 +1,12 @@
 .clients {
     @include section(60px, 60px);
+    @media (min-width: 1200px) {
+        @include section(94px, 94px);
+    }
+}
+
+.clients__title {
+    @extend %section-title;
 }
 
 .clients__list {
@@ -11,10 +18,16 @@
 .clients__item {
     height: 92px;
     width: calc((100% - 30px)/2);
-
-    // &:not(:first-child) {
-    //     margin-left: 30px;
-    // } 
+    @media (min-width: 768px) {
+        --items: 3;
+        --indent: 30px;
+        flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
+    }
+    @media (min-width: 1200px) {
+        --items: 6;
+        --indent: 30px;
+        flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
+    }
 }
 
 .clients__link {

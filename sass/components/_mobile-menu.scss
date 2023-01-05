@@ -1,4 +1,9 @@
-.menu-container {
+.mobile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mobile-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,34 +12,64 @@
     padding: 48px 25px;
     background-color: #ffffff;
     z-index: 999;
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
   
     transform: translateX(-100%);
     transition: transform 250ms ease-in-out;
   }
 
-.menu-container.is-open {
+.mobile-menu.is-open {
     transform: translateX(0);
-  }
+}
 
-.menu-contacts {
+.mobile-menu__list {
+    flex-grow: 1;
+}
+
+.mobile-menu__contacts {
     margin-top: auto;
     margin-bottom: 64px;
-  }
-.menu-social {
-    display: flex;
-    gap: 20px;
 }
-.nav__btn {
+
+.menu__tel {
+    @include fonts($fw: 500, $fs: 34px, $lh: 1.18, $lsp: 0.02em, $color: var(--acsent-color));
+
+    text-decoration: none;
+}
+
+.menu__mail {
+    @include fonts($fw: 500, $fs: 24px, $lh: 1.167, $lsp: 0.02em);
+
+    text-decoration: none;
+}
+
+.mobile-menu__socials {
+    display: flex;
+}
+.mobile-menu__social-item {
+    padding-right: 10px;
+        &:not(:first-child) {
+        border-left: 1px solid rgba(33, 33, 33, 0.2);
+        padding-left: 10px;
+    }
+}
+.mobile-menu__social-link {
+
+
+    @include fonts($fw: 500, $fs: 18px, $lh: 1.22, $lsp: 0.02em, $color: var(--acsent-color));
+
+    text-decoration: none;
+}
+.mobile-menu__btn {
     min-height: 40px;
     min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
   
-    margin: 0;
+    margin-left: auto;
     padding: 0;
     background-color: transparent;
     cursor: pointer;
@@ -45,18 +80,30 @@
         top: 10px;
         right: 15px;
     }
+
+    &:hover, 
+    &:focus {
+        color: var(--acsent-color);
+    }
+
+    @media (min-width: 768px) {
+		display: none;
+	}
 }
 
-.menu-item {
+.mobile-menu__item {
     &:not(:last-child) {
         margin-bottom: 32px;
     }
 }
 
-.menu-link {
+.menu__link {
 
     @include fonts($fw: 500, $fs: 40px, $lh: 1.175, $lsp: 0.02em, $color: var(--title-text-color));
     text-decoration: none;
-
+    &:hover, 
+    &:focus {
+        color: var(--acsent-color);
+    }
 
 }

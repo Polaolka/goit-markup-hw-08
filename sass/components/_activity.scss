@@ -1,11 +1,26 @@
 .activity {
-    @include section($pb: 94px);
+    display: none;
+    @media (min-width: 1200px) {
+        display: block;
+    }
+    @include section(0, 94px);
 
     border-color: var(--white-color);
 }
 
-.activity__li-item {
+.activity__list {
+    display: flex;
+	align-items: center;
+	gap: var(--indent);
+}
+
+.activity__item {
     position: relative;
+    flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
+}
+
+.activity__title {
+    @extend %section-title;
 }
 
 .activity__label {

@@ -11,9 +11,28 @@
 
 .footer__wrapper {
     text-align: center;
-    // display: flex;
-    // align-items: baseline;
-    // gap: 70px;
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 165px;
+        margin-bottom: 60px;
+    }
+    @media (min-width: 1200px) {
+        gap: 70px;
+        margin-bottom: 0;
+    }
+    &--desctop {
+        display: block;
+        margin-bottom: 0;
+        @media (min-width: 1200px) {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            margin-bottom: 0;
+        }
+    }
+
 }
 
 // .footer__contacts {
@@ -24,6 +43,12 @@
 address {
     margin-top: 20px;
     margin-bottom: 60px;
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+    @media (min-width: 1200px) {
+        text-align: left;
+    }
 }
 
 .footer__contact {
@@ -60,12 +85,17 @@ address {
 
     @include fonts($fw: 700, $lh: 1.14, $color: var(--white-color));
     text-transform: uppercase;
-
+    @media (min-width: 1200px) {
+        text-align: left;
+    }
 }
 
 .footer__join {
     text-align: center;
     margin-bottom: 60px;
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
     // width: 206px;
 }
 
@@ -74,8 +104,12 @@ address {
     text-align: center;
 }
 .footer__send-block {
-    // display: flex;
     align-items: center;
+    @media (min-width: 1200px) {
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .footer__input {
@@ -92,6 +126,15 @@ address {
     line-height: 1.25;
     letter-spacing: 0.03em;
     color: var(--white-color);
+
+    @media (min-width: 768px) {
+        width: 450px;
+    }
+    @media (min-width: 1200px) {
+        width: 358px;
+        margin-bottom: 0;
+        margin-right: 12px;
+    }
 }
 .footer__form input::placeholder {
     font-size: 16px;
