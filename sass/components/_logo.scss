@@ -1,28 +1,27 @@
 .logo {
-    display: flex;
-    text-decoration: none;
+	display: flex;
+	text-decoration: none;
 	font-family: "Raleway", sans-serif;
 
-    @include fonts($fw: 700, $fs: 24px, $lh: 1.167, $color: #000000);
+	@include fonts($fw: 700, $fs: 24px, $lh: 1.167, $color: #000000);
 
-    @media (min-width: 768px) {
-        margin-right: 87px;
-
+	@media (min-width: 768px) {
+		margin-right: 87px;
 	}
-    @media (min-width: 1200px) {
-        margin-right: 92px;
-        @include fonts($fw: 700, $fs: 26px, $lh: 1.19, $color: #000000);
+	@media (min-width: 1200px) {
+		margin-right: 92px;
+		@include fonts($fw: 700, $fs: 26px, $lh: 1.19, $color: #000000);
 	}
 
-    &--accent {
-        color: var(--acsent-color);
-    }
-    &--dark-them {
-        margin: 0 auto;
-        color: var(--white-color);
-        justify-content: center;
-        @media (min-width: 1200px) {
-            margin-right: 92px;
-        }
-    }
+	&--accent {
+		color: var(--acsent-color);
+	}
+	&--dark-them {
+		margin: 0 auto;
+		color: var(--white-color);
+		justify-content: center;
+		@media (min-width: 1200px) {
+			margin-right: 92px;
+		}
+	}
 }

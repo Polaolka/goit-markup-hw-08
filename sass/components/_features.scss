@@ -1,75 +1,68 @@
-
 .features {
-    @include section(60px, 60px);
+	@include section(60px, 60px);
 
-    background-color: var(--white-color);
+	background-color: var(--white-color);
 
-    @media (min-width: 1200px) {
-        @include section(94px, 94px);
-    }
+	@media (min-width: 1200px) {
+		@include section(94px, 94px);
+	}
 }
 
 .features__list {
-
-    @media (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-        flex-wrap: wrap;
-        gap: 30px;
-    }
+	@media (min-width: 768px) {
+		display: flex;
+		flex-wrap: wrap;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
 }
 
 .features__card {
-    &:not(:last-child) {
-        margin-bottom: 30px;
-        @media (min-width: 768px) {
-            margin-bottom: 0;
-        }    
-    }
-    @media (min-width: 768px) {
-        --items: 2;
-        --indent: 30px;
-        flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
-    }
-    @media (min-width: 1200px) {
-        --items: 4;
-        --indent: 30px;
-        flex-basis: calc((100% - (var(--indent)*(var(--items) - 1)))/var(--items));
-    }
-
-    
+	&:not(:last-child) {
+		margin-bottom: 30px;
+		@media (min-width: 768px) {
+			margin-bottom: 0;
+		}
+	}
+	@media (min-width: 768px) {
+		--items: 2;
+		--indent: 30px;
+		flex-basis: calc((100% - (var(--indent) * (var(--items) - 1))) / var(--items));
+	}
+	@media (min-width: 1200px) {
+		--items: 4;
+		--indent: 30px;
+		flex-basis: calc((100% - (var(--indent) * (var(--items) - 1))) / var(--items));
+	}
 }
 
 .features__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 120px;
-    margin-bottom: 30px;
-    background: var(--light-bg-color);
-    border-radius: 4px;
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 120px;
+	margin-bottom: 30px;
+	background: var(--light-bg-color);
+	border-radius: 4px;
 }
 
 .features__icon {
-    display: inline-block;
-
+	display: inline-block;
 }
 
 .features__title {
-    margin-bottom: 10px;
-    text-align: center;
+	margin-bottom: 10px;
+	text-align: center;
 
-    @include fonts($fw: 700, $lh: 1.14, $color: var(--title-text-color));
-    text-transform: uppercase;
+	@include fonts($fw: 700, $lh: 1.14, $color: var(--title-text-color));
+	text-transform: uppercase;
 
-    @media (min-width: 768px) {
-        text-align: left;
-    }
-
+	@media (min-width: 768px) {
+		text-align: left;
+	}
 }
 
 .features__txt {
-    @include fonts($lh: 2);
+	@include fonts($lh: 2);
 }

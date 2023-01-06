@@ -1,6 +1,6 @@
 @mixin section($pt: 94px, $pb: 94px) {
-    padding-top: $pt;
-    padding-bottom: $pb;
+	padding-top: $pt;
+	padding-bottom: $pb;
 }
 
 @mixin fonts($fw: 400, $fs: 14px, $lh: 1.71, $lsp: 0.03em, $color: var(--main-text-color)) {

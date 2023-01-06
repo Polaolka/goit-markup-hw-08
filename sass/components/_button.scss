@@ -1,47 +1,44 @@
-
 %button {
-    cursor: pointer;
-    border-radius: 4px;
-    border: 1px solid transparent;      
+	cursor: pointer;
+	border-radius: 4px;
+	border: 1px solid transparent;
 }
 
 .button--main {
-    @extend %button;
+	@extend %button;
 
-    display: block;
-    margin: 0 auto;
-    padding: 10px 15px;
-    width: 200px;
-    height: 50px;
+	display: block;
+	margin: 0 auto;
+	padding: 10px 15px;
+	width: 200px;
+	height: 50px;
 
-    @include fonts($fw: 700, $fs: 16px, $lh: 1.88, $lsp: 0.06em, $color: var(--white-color));
+	@include fonts($fw: 700, $fs: 16px, $lh: 1.88, $lsp: 0.06em, $color: var(--white-color));
 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    background-color: var(--acsent-color);
-
-    
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	background-color: var(--acsent-color);
 }
 .button--send {
-    @extend %button;
-    
-    margin: 0 auto;
-    padding: 9px 28px;
+	@extend %button;
 
-    background-color: var(--acsent-color);
-    width: 200px;
+	margin: 0 auto;
+	padding: 9px 28px;
 
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+	background-color: var(--acsent-color);
+	width: 200px;
 
-    @include fonts($fw: 700, $fs: 16px, $lh: 1.88, $color: var(--white-color));
-    
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include fonts($fw: 700, $fs: 16px, $lh: 1.88, $color: var(--white-color));
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button__icon {
-    margin-left: 10px;
-    width: 24px;
-    height: 24px;
-    fill: var(--white-color);
+	margin-left: 10px;
+	width: 24px;
+	height: 24px;
+	fill: var(--white-color);
 }
