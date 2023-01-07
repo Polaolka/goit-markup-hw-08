@@ -54,6 +54,7 @@
 
 .mobile-menu__socials {
 	display: flex;
+	flex-wrap: wrap;
 }
 .mobile-menu__social-item {
 	padding-right: 10px;
@@ -119,5 +120,8 @@
 
 	@media (min-width: 390px) {
 		@include fonts($fw: 500, $fs: 40px, $lh: 1.175, $lsp: 0.02em, $color: var(--title-text-color));
+	}
+	&--current {
+		color: var(--acsent-color);
 	}
 }
