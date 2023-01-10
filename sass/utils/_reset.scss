@@ -8,6 +8,11 @@ img {
 }
 img {
 	display: block;
+	min-width: 100%;
+	height: auto;
+
+	object-fit: cover;
+	object-position: center;
 }
 .list {
 	padding: 0;
